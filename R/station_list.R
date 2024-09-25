@@ -1,4 +1,4 @@
-stations_list <- function(api_key = NULL, x_api_secret = NULL, as_list = FALSE){
+station_list <- function(api_key = NULL, x_api_secret = NULL, as_list = FALSE){
   # Try to get API key and secret from renviron
   if(any(is.null(api_key), is.null(x_api_secret))){
     access_info <- get_login_info_renviron()
