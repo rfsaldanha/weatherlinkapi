@@ -1,10 +1,13 @@
 Package: weatherlinkapi
-Title: What the Package Does (One Line, Title Case)
+Title: WeatherLink API wrapper to retrieve data from weather stations
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person(given = "Raphael",
+           family = "Saldanha",
+           role = c("aut", "cre"),
+           email = "raphael.saldanha@fiocruz.br",
+           comment = c(ORCID = "0000-0003-0652-8466"))
+Description: Retrieve data from weather station sensors using the WeatherLink API.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
