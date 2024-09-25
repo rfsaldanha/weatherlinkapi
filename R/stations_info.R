@@ -1,4 +1,4 @@
-station_list <- function(station_ids, api_key = NULL, x_api_secret = NULL, as_list = FALSE){
+stations_info <- function(api_key = NULL, x_api_secret = NULL, as_list = FALSE){
   # Try to get API key and secret from renviron
   if(any(is.null(api_key), is.null(x_api_secret))){
     access_info <- get_login_info_renviron()
@@ -11,7 +11,6 @@ station_list <- function(station_ids, api_key = NULL, x_api_secret = NULL, as_li
     httr2::req_url_path("v2/stations") |>
     httr2::req_headers("x-api-secret" = x_api_secret) |>
     httr2::req_url_query("api-key" = api_key) |>
-    httr2::req_url_query("station-ids" = station_ids) |>
     httr2::req_throttle(rate = throttle_rate, realm = server_url) |>
     httr2::req_retry(max_tries = retry_max_tries)
 
