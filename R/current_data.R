@@ -1,3 +1,12 @@
+#' Retrieve current data
+#'
+#' @param station_id integer. Station identification code (id).
+#' @param api_key character. Start date. Use the format `day/month/year`. Example: `20/09/2024`
+#' @param x_api_secret character. End date. Use the format `day/month/year`. Example: `20/09/2024`
+#' @param as_list logical. If `TRUE` the function will return a list of lists, otherwise, a list with tibbles.
+#'
+#' @return a list of lists or a list of tibbles, depending on the `as_list` argument.
+#' @export
 current_data <- function(station_id, api_key = NULL, x_api_secret = NULL, as_list = FALSE){
   # Try to get API key and secret from renviron
   if(any(is.null(api_key), is.null(x_api_secret))){
