@@ -30,7 +30,7 @@ nodes_list <- function(api_key = NULL, x_api_secret = NULL, as_list = FALSE){
     # Return data frame
 
     # List to data frame
-    res2 <- purrr::map(res$stations, dplyr::bind_rows) |>
+    res2 <- purrr::map(res$nodes, dplyr::bind_rows) |>
       purrr::list_rbind() 
 
     return(res2)
