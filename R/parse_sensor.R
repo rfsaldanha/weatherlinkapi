@@ -11,7 +11,7 @@ parse_sensor <- function(sensor){
   })
 
   out <- tibble::tibble(lsid = sensor$lsid, sensor_type = sensor$sensor_type, data) |>
-    dplyr::mutate(ts = lubridate::as_datetime(.data$ts, tz = tz))
+    dplyr::mutate(ts = lubridate::as_datetime(.data$ts))
   
   return(out)
 }

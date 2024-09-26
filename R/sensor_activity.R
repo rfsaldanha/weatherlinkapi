@@ -33,8 +33,8 @@ sensor_activity <- function(api_key = NULL, x_api_secret = NULL, as_list = FALSE
     res2 <- purrr::map(res$sensor_activity, dplyr::bind_rows) |>
       purrr::list_rbind() |>
       dplyr::mutate(
-        time_received = lubridate::as_datetime(.data$time_received, tz = tz),
-        time_recorded = lubridate::as_datetime(.data$time_recorded, tz = tz)
+        time_received = lubridate::as_datetime(.data$time_received),
+        time_recorded = lubridate::as_datetime(.data$time_recorded)
       )
 
     return(res2)
